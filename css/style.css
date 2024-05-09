@@ -1,0 +1,236 @@
+* {
+    font-family: 'Oswald', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    background-color: #0A5C36;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 800px;
+    width: 500px;
+    margin: 2rem auto;
+    flex-direction: column;
+    border: #ffffff solid 10px ;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-image: url("../assets/imgs/card-background.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+#logo {
+    max-width: 250px;
+    margin-left: -1.5rem;
+}
+
+.clock-background {
+    position: relative;
+    display: flex;
+    background-color: chartreuse;
+    height: 200px; 
+    width: 200px; 
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 8rem;
+}
+
+.clock {
+    position: absolute;
+    background: #707070;
+    height: 70px; 
+    width: 70px; 
+    border-radius: 0 0 0 10px;
+    border: 15px solid #000;
+    border-top: none;
+    border-right: none;
+    transition: 0.5s;
+}
+
+#clock-right {
+    right: 0;
+    transform: rotate(45deg);
+}
+
+#clock-left {
+    transform: rotate(-135deg);
+    left: 0;
+}
+
+.ring, #ring3, #ring2 {
+    height: 150px; 
+    width: 150px; 
+    border: 12px solid #f0f0f0;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#ring3 {
+    height: 207px; 
+    width: 207px; 
+    border: 12px solid #606060;
+}
+
+#ring2 {
+    height: 171px; 
+    width: 171px; 
+    border: 18px solid #000;
+}
+
+#alien {
+    position: absolute;
+    max-width: 60px; 
+    opacity: 0;
+}
+
+#clock-right.active,
+#clock-left.active {
+    height: 90px; 
+    width: 90px;
+    background-color: #0000;
+}
+
+#clock-right.active {
+    right: 50px;
+}
+
+#clock-left.active {
+    left: 50px;
+}
+
+#alien.active {
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+button {
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem 2.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgb(140, 216, 65);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+button:hover {
+    background-color: #18392B;
+    color: #ffffff;
+    border: #ffffff solid 2px;
+    transition: 0.5s;
+}
+
+.ring.hide, 
+#logo.hide, 
+#clock-right.hide,
+#clock-left.hide,
+#random-button.hide {
+    opacity: 0;
+    transition: 2s;
+    visibility: hidden;
+}
+
+.clock-background.move {
+    transform: translate3d(150%, -80%, 0);
+    height: 100px;
+    width: 100px;
+    transition: 1.5s;
+    z-index: 3;
+}
+
+#info {
+    opacity: 0;
+    height: 0%;
+    width: 100%;
+}
+
+#info.active {
+	background-color: white;
+    position: absolute;
+    height: 63%;
+    width: 100%;
+    bottom: 0;
+    opacity: 0.8;
+    transition: 2s;
+}
+
+#info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    text-align: justify;
+}
+
+#info-content h2 {
+    text-transform: uppercase;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+#buttons button {
+    background-color: #7fff00;
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+}
+
+#buttons button i {
+    padding-right: 0.4rem;
+}
+
+#buttons button:hover {
+    background-color: #18392B;
+}
+
+#header-background {
+    background-size: cover;
+    background-position: center;
+    height: 0%;
+    width: 100%;
+}
+
+#header-background.active {
+    position: absolute;
+    height: 37%;
+    width: 100%;
+    top: 0;
+    opacity: 1;
+    transition: 2s;
+}
+
+@media (max-width: 480px) {
+    .main {
+        height: auto; 
+        max-width: 100%;
+        margin: 1rem auto;
+    }
+    
+    .card {
+        height: auto;
+    }
+}

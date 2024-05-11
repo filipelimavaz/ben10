@@ -31,6 +31,15 @@ A ferramenta utiliza JavaScript para buscar uma lista de aliens de um banco de d
 - **Banco de Dados JSON**: Os dados dos aliens são armazenados em formato JSON, permitindo fácil recuperação e manipulação.
 - **XMLHttpRequest (XHR)**: O XHR é utilizado para buscar dados de forma assíncrona no banco de dados JSON.
 
+## Screenshots
+
+Algumas screenshots da versão mobile:
+
+| Tela 1 | Tela 2 |
+|----------------|---------------|
+| ![Mobile](assets/prints/Screenshot_1.png) | ![Mobile](assets/prints/Screenshot_2.png) |
+
+
 ### Desenvolvedor:
 
 Este projeto foi desenvolvido por [Filipe de Lima Vaz](https://www.linkedin.com/in/filipe-de-lima-vaz/). Sinta-se à vontade para conferir o repositório no GitHub para mais detalhes e contribuições.

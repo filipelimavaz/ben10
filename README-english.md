@@ -31,6 +31,14 @@ The tool uses JavaScript to fetch a list of aliens from a JSON database. When th
 - **JSON Database**: Alien data is stored in JSON format, allowing easy retrieval and manipulation.
 - **XMLHttpRequest (XHR)**: XHR is used to asynchronously fetch data from the JSON database.
 
+## Screenshots
+
+Some screenshots from the mobile version:
+
+| Screen 1 | Screen 2 |
+|----------|----------|
+| ![Mobile](assets/prints/Screenshot_1.png) | ![Mobile](assets/prints/Screenshot_2.png) |
+
 ### Developer:
 
 This project was developed by [Filipe de Lima Vaz](https://www.linkedin.com/in/filipe-de-lima-vaz/). Feel free to check out the GitHub repository for more details and contributions.

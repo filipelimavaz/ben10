@@ -28,8 +28,8 @@ html {
     position: relative;
     display: flex;
     align-items: center;
-    max-height: 800px;
-    max-width: 500px;
+    max-width: 30%;
+    max-height: 90%;
     margin: 2rem auto;
     flex-direction: column;
     border: solid 10px var(--secondary-color);
@@ -247,10 +247,22 @@ button:hover {
     background-color: var(--button-hover-color);
 }
 
+@media (max-width: 1100px) {
+    .main {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 750px) {
+    .main {
+        max-width: 70%;
+    }
+}
+
 @media (max-width: 450px) {
     .main {
         max-width: 100%;
-        height: 100vh; 
+        max-height: 100%;
         margin: 1rem;
         overflow: hidden;
     }
@@ -270,13 +282,13 @@ button:hover {
     }
 
     .clock-background.move {
-        top: -10%;
+        top: -120px;
         left: 30%;
         animation: moveClockBackground 2s ease;
     }
 
-    #info-content {
-        font-size: 1.2rem;
+    .info-content {
+        font-size: 1rem;
     }
 
     .info-buttons button span {
@@ -284,7 +296,7 @@ button:hover {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 500px) {
     .main {
         height: 95vh; 
         overflow: hidden;
@@ -292,10 +304,6 @@ button:hover {
 
     .clock-background {
         margin: 3rem auto;
-    }
-
-    #info-content {
-        font-size: 1rem;
     }
 
     .clock-background.move {

@@ -6,7 +6,13 @@ You can read this doc in english by clicking [here](./README-english.md)
 
 ## Randomizador de Aliens do Ben 10
 
-Este projeto é uma ferramenta divertida de randomização inspirada nos aliens da série animada Ben 10. Permite aos usuários selecionar aleatoriamente um personagem alienígena da série e fornece informações sobre o alienígena selecionado.
+Este projeto é uma aplicação de randomização inspirada nos aliens da série animada Ben 10. Permite aos usuários selecionar aleatoriamente um personagem alienígena da série e fornece informações sobre o alienígena selecionado. O objetivo principal foi praticar minhas habilidades em desenvolvimento web, incluindo HTML, CSS e JavaScript.
+
+## Tecnologias Utilizadas
+
+- HTML
+- CSS
+- JavaScript
 
 ### Demonstração:
 

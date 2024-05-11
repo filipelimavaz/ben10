@@ -1,11 +1,26 @@
+/* Colors */
+:root {
+    --primary-color: #0A5C36;
+    --secondary-color: #FFFFFF;
+    --button-color: #8CD841;
+    --button-hover-color: #18392B;
+    --clock-background-color: #7FFF00;
+    --ring-color: #F0F0F0;
+    --ring3-color: #606060;
+    --ring2-color: #000000;
+    --clock-color: #707070;
+}
+
+/* Global */
 * {
     font-family: 'Oswald', sans-serif;
     padding: 0;
     margin: 0;
 }
 
+/* Main */
 html {
-    background-color: #0A5C36;
+    background-color: var(--primary-color);
 }
 
 .main {
@@ -16,13 +31,14 @@ html {
     width: 500px;
     margin: 2rem auto;
     flex-direction: column;
-    border: #ffffff solid 10px ;
+    border: solid 10px var(--secondary-color);
     border-radius: 12px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+/* Card */
 .card {
     display: flex;
     align-items: center;
@@ -41,10 +57,11 @@ html {
     margin-left: -1.5rem;
 }
 
+/* Clock */
 .clock-background {
     position: relative;
     display: flex;
-    background-color: chartreuse;
+    background-color: var(--clock-background-color);
     height: 200px; 
     width: 200px; 
     border-radius: 50%;
@@ -52,28 +69,6 @@ html {
     align-items: center;
     margin-top: 4rem;
     margin-bottom: 8rem;
-}
-
-.clock {
-    position: absolute;
-    background: #707070;
-    height: 70px; 
-    width: 70px; 
-    border-radius: 0 0 0 10px;
-    border: 15px solid #000;
-    border-top: none;
-    border-right: none;
-    transition: 0.5s;
-}
-
-#clock-right {
-    right: 0;
-    transform: rotate(45deg);
-}
-
-#clock-left {
-    transform: rotate(-135deg);
-    left: 0;
 }
 
 .ring, #ring3, #ring2 {
@@ -96,14 +91,40 @@ html {
     border: 18px solid #000;
 }
 
-#alien {
+.clock {
     position: absolute;
-    max-width: 60px; 
-    opacity: 0;
+    background: var(--clock-color);
+    height: 70px; 
+    width: 70px; 
+    border-radius: 0 0 0 10px;
+    border: 15px solid #000;
+    border-top: none;
+    border-right: none;
+    transition: 0.5s;
 }
 
+.clock-background.move {
+    transform: translate3d(150%, -80%, 0);
+    height: 100px;
+    width: 100px;
+    transition: 1.5s;
+    z-index: 3;
+}
+
+#clock-right {
+    right: 0;
+    transform: rotate(45deg);
+}
+
+#clock-left {
+    transform: rotate(-135deg);
+    left: 0;
+}
+
+/* Animations */
 #clock-right.active,
-#clock-left.active {
+#clock-left.active,
+#alien.active {
     height: 90px; 
     width: 90px;
     background-color: #0000;
@@ -117,11 +138,19 @@ html {
     left: 50px;
 }
 
+#alien {
+    position: absolute;
+    opacity: 0;
+}
+
 #alien.active {
     opacity: 1;
+    max-height: 80px;
+    max-width: 60px;
     transition: opacity 2s;
 }
 
+/* Button */
 button {
     text-transform: uppercase;
     cursor: pointer;
@@ -129,35 +158,24 @@ button {
     border: none;
     border-radius: 10px;
     font-size: 20px;
-    background-color: rgb(140, 216, 65);
+    background-color: var(--button-color);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 button:hover {
-    background-color: #18392B;
+    background-color: var(--button-hover-color);
     color: #ffffff;
-    border: #ffffff solid 2px;
+    border: var(--secondary-color) solid 2px;
     transition: 0.5s;
 }
 
-.ring.hide, 
-#logo.hide, 
-#clock-right.hide,
-#clock-left.hide,
-#random-button.hide {
+.hide {
     opacity: 0;
     transition: 2s;
     visibility: hidden;
 }
 
-.clock-background.move {
-    transform: translate3d(150%, -80%, 0);
-    height: 100px;
-    width: 100px;
-    transition: 1.5s;
-    z-index: 3;
-}
-
+/* Informations */
 #info {
     opacity: 0;
     height: 0%;
@@ -165,7 +183,7 @@ button:hover {
 }
 
 #info.active {
-	background-color: white;
+    background-color: var(--secondary-color);
     position: absolute;
     height: 63%;
     width: 100%;
@@ -194,7 +212,7 @@ button:hover {
 }
 
 #buttons button {
-    background-color: #7fff00;
+    background-color: var(--clock-background-color);
     padding: 0.5rem 1rem;
     font-size: 15px;
 }
@@ -204,9 +222,10 @@ button:hover {
 }
 
 #buttons button:hover {
-    background-color: #18392B;
+    background-color: var(--button-hover-color);
 }
 
+/* Background alien card header */
 #header-background {
     background-size: cover;
     background-position: center;
@@ -223,14 +242,15 @@ button:hover {
     transition: 2s;
 }
 
-@media (max-width: 480px) {
+/* Responsive */
+@media only screen and (max-width: 414px) {
     .main {
-        height: auto; 
-        max-width: 100%;
-        margin: 1rem auto;
+        margin: 20% auto;
+        height: 80vh;
+        width: 90vw;
     }
-    
-    .card {
-        height: auto;
+
+    .clock-background.move {
+        transform: translate3d(300%, 250%, 0);
     }
 }

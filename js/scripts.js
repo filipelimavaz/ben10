@@ -190,7 +190,11 @@ randomButton.addEventListener("click", () => {
                             info.classList.add("active")
                             headerBackground.style.backgroundImage = `url('assets/imgs/${alienName}.jpg')`
                             headerBackground.classList.add("active")
-                            alienInformation.querySelector("h2").innerText = alienName
+                            if(alienName === "ghostfreak2") {
+                                alienInformation.querySelector("h2").innerText = "ghostfreak"
+                            } else {
+                                alienInformation.querySelector("h2").innerText = alienName
+                            }
                             alienInformation.querySelector("p").innerText = description
                         }, 2000)
                     })

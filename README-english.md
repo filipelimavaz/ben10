@@ -1,4 +1,4 @@
-You can read this document in Portuguse by clicking [here](./README.md)
+You can read this document in Portuguese by clicking [here](./README.md)
 
 <p align="center">
   <img src="assets/imgs/logo.png" width="200px" alt="Ben 10 logo">
@@ -7,6 +7,10 @@ You can read this document in Portuguse by clicking [here](./README.md)
 ## Ben 10 Alien Randomizer
 
 This project is a fun randomization tool inspired by the aliens from the animated series Ben 10. It allows users to randomly select an alien character from the series and provides information about the selected alien.
+
+### Try It Out:
+
+[https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-instagramclone.netlify.app/)
 
 ### Features:
 
@@ -30,7 +34,3 @@ The tool uses JavaScript to fetch a list of aliens from a JSON database. When th
 ### Developer:
 
 This project was developed by [Filipe de Lima Vaz](https://www.linkedin.com/in/filipe-de-lima-vaz/). Feel free to check out the GitHub repository for more details and contributions.
-
-### Try It Out:
-
-[Link to the Demo](#) (https://filipelimavaz-ben10.netlify.app)

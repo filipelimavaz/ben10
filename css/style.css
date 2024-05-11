@@ -29,7 +29,7 @@ html {
     display: flex;
     align-items: center;
     max-width: 30%;
-    max-height: 90%;
+    height: 90vh;
     margin: 2rem auto;
     flex-direction: column;
     border: solid 10px var(--secondary-color);
@@ -109,12 +109,13 @@ html {
 }
 
 .clock-background.move {
-    top: -150px;
+    top: -20px;
     left: 30%;
     height: 100px;
     width: 100px;
     transition: 1.5s;
     z-index: 3;
+    animation: moveClockBackground 2s ease;
 }
 
 #clock-right {
@@ -161,7 +162,7 @@ button {
     border: none;
     margin-bottom: 2rem;
     border-radius: 10px;
-    font-size: 20px;
+    font-size: 1.2rem;
     background-color: var(--button-color);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
@@ -189,7 +190,7 @@ button:hover {
 }
 
 .header-background.active {
-    height: 30%;
+    height: 40%;
     width: 100%;
     top: 0;
     opacity: 1;
@@ -207,7 +208,7 @@ button:hover {
 
 .info.active {
     background-color: var(--secondary-color);
-    height: 70%; /* Ajuste conforme necessário */
+    height: 60%; /* Ajuste conforme necessário */
     width: 100%;
     bottom: 0;
     opacity: 0.8;
@@ -259,7 +260,7 @@ button:hover {
     }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
     .main {
         max-width: 100%;
         max-height: 100%;
@@ -282,7 +283,7 @@ button:hover {
     }
 
     .clock-background.move {
-        top: -120px;
+        top: 0%;
         left: 30%;
         animation: moveClockBackground 2s ease;
     }
@@ -296,7 +297,7 @@ button:hover {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 380px) {
     .main {
         height: 95vh; 
         overflow: hidden;
@@ -307,9 +308,13 @@ button:hover {
     }
 
     .clock-background.move {
-        top: -20%;
+        top: -10%;
         left: 30%;
         animation: moveClockBackground 2s ease;
+    }
+
+    .info-content {
+        font-size: 0.8rem;
     }
 }
 

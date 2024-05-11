@@ -8,6 +8,10 @@ You can read this doc in english by clicking [here](./README-english.md)
 
 Este projeto é uma ferramenta divertida de randomização inspirada nos aliens da série animada Ben 10. Permite aos usuários selecionar aleatoriamente um personagem alienígena da série e fornece informações sobre o alienígena selecionado.
 
+### Demonstração:
+
+Link da aplicação online: [https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-instagramclone.netlify.app/)
+
 ### Recursos:
 
 - **Seleção Aleatória de Alienígena**: Os usuários podem clicar no botão "Aleatório" para selecionar aleatoriamente um alienígena da série Ben 10.
@@ -30,7 +34,3 @@ A ferramenta utiliza JavaScript para buscar uma lista de aliens de um banco de d
 ### Desenvolvedor:
 
 Este projeto foi desenvolvido por [Filipe de Lima Vaz](https://www.linkedin.com/in/filipe-de-lima-vaz/). Sinta-se à vontade para conferir o repositório no GitHub para mais detalhes e contribuições.
-
-### Experimente:
-
-[Link para a Demonstração](#) (https://filipelimavaz-ben10.netlify.app)

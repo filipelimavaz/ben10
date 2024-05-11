@@ -16,7 +16,7 @@ Este projeto é uma aplicação de randomização inspirada nos aliens da série
 
 ### Demonstração:
 
-Link da aplicação online: [https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-instagramclone.netlify.app/)
+Link da aplicação online: [https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-ben10.netlify.app)
 
 ### Recursos:
 

@@ -1,6 +1,8 @@
 You can read this doc in english by clicking [here](./README-english.md)
 
-<img src="assets/imgs/logo.png" width="200px" alt="Ben 10 logo">
+<p align="center">
+  <img src="assets/imgs/logo.png" width="200px" alt="Ben 10 logo">
+</p>
 
 ## Randomizador de Aliens do Ben 10
 

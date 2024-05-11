@@ -8,15 +8,15 @@ You can read this document in Portuguese by clicking [here](./README.md)
 
 This project is a randomization application inspired by the aliens from the animated series Ben 10. It allows users to randomly select an alien character from the series and provides information about the selected alien. The main objective was to practice my web development skills, including HTML, CSS and JavaScript.
 
-### Try It Out:
-
-[https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-instagramclone.netlify.app/)
-
 ## Tecnologies
 
 - HTML
 - CSS
 - JavaScript
+
+### Try It Out:
+
+[https://filipelimavaz-ben10.netlify.app](https://filipelimavaz-instagramclone.netlify.app/)
 
 ### Features:
 

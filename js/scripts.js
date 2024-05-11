@@ -6,19 +6,37 @@ const clock1 = document.querySelector("#clock-right")
 const clock2 = document.querySelector("#clock-left")
 const alien = document.querySelector("#alien")
 const clockBackground = document.querySelector(".clock-background")
-const info = document.querySelector("#info")
-const headerBackground = document.querySelector("#header-background")
-const alienInformation = document.querySelector("#info-content")
+const info = document.querySelector(".info")
+const headerBackground = document.querySelector(".header-background")
+const alienInformation = document.querySelector(".info-content")
 const linkedinButton = document.querySelector("#linkedin")
 const githubButton = document.querySelector("#github")
 const refreshButton = document.querySelector("#refresh")
 
-const alienList = [
-    "benmummy", "blitzwolfer", "cannonbolt", "diamondhead", "ditto", "eyeguy",
-    "fourarms", "frankenstrike", "ghostfreak", "ghostfreak2", "greymatter",
-    "heatblast", "ripjaws", "stinkfly", "upchuck", "upgrade", "waybig", "wildmut",
-    "wildvine", "xlr8"
-]
+const alienList = []
+
+function fillAlienList() {
+    const xhr = new XMLHttpRequest()
+    const url = "../data/aliens.json"
+
+    xhr.open("GET", url, true);
+    xhr.responseType = "json"
+
+    xhr.onload = () => {
+        if (xhr.status === 200) {
+            const database = xhr.response;
+            database.aliens.forEach(alien => {
+                alienList.push(alien.name);
+            })
+        } else {
+            console.error("Erro ao carregar os dados do JSON:", xhr.statusText)
+        }
+    }
+    xhr.onerror = () => {
+        console.error("Erro na requisição:", xhr.statusText)
+    }
+    xhr.send()
+}
 
 function randomAlien(list) {
     const randomNumber = Math.floor(Math.random() * list.length)
@@ -71,75 +89,81 @@ function displayNone() {
 }
 
 function fixAlienPosition(string) {
-    alien.style.maxWidth = ""
+    alien.style.width = ""
     alien.style.marginTop = ""
     alien.style.marginLeft = ""
 
     switch(string) {
         case "benmummy":
-            alien.style.maxWidth = "45px"
+            alien.style.width = "45px"
             alien.style.marginTop = "-10px"
         break
         case "blitzwolfer":
-            alien.style.maxWidth = "60px"
+            alien.style.width = "60px"
             alien.style.marginTop = "-10px"
         break
         case "cannonbolt":
-            alien.style.maxWidth = "80px"
+            alien.style.width = "80px"
         break
         case "diamondhead":
-            alien.style.maxWidth = "55px"
+            alien.style.width = "55px"
             alien.style.marginTop = "-5px"
         break
         case "ditto":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
         break
         case "eyeguy":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
         break
         case "frankenstrike":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
             alien.style.marginTop = "-8px"
         break
         case "ghostfreak":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
             alien.style.marginLeft = "-15px"
         break
         case "ghostfreak2":
+            alien.style.width = "50px"
             alien.style.marginTop = "-10px"
         break
         case "greymatter":
-            alien.style.maxWidth = "35px"
+            alien.style.width = "35px"
         break
         case "heatblast":
-            alien.style.maxWidth = "40px"
+            alien.style.width = "40px"
             alien.style.marginTop = "-10px"
         break
         case "ripjaws":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
             alien.style.marginTop = "-4px"
         break
         case "stinkfly":
-            alien.style.maxWidth = "50px"
+            alien.style.width = "50px"
             alien.style.marginTop = "-4px"
         break
+        case "upchuck":
+            alien.style.width = "60px"
+        break
         case "upgrade":
-            alien.style.maxWidth = "70px"
+            alien.style.width = "70px"
             alien.style.marginTop = "-18px"
             alien.style.marginLeft = "-6px"
         break
         case "waybig":
-            alien.style.maxWidth = "45px"
-            alien.style.marginTop = "-10px"
+            alien.style.width = "45px"
         break
         case "wildmut":
-            alien.style.maxWidth = "70px"
+            alien.style.width = "70px"
         break
         case "wildvine":
-            alien.style.maxWidth = "45px"
+            alien.style.width = "45px"
         break
         case "xlr8":
-            alien.style.maxWidth = "70px"
+            alien.style.width = "70px"
+        break
+        case "fourarms":
+            alien.style.width = "50px"
         break
     }
 }
@@ -171,13 +195,15 @@ function accessData(alienName) {
         xhr.onerror = () => {
             reject(xhr.statusText)
         }
-
         xhr.send();
     })
 }
 
+fillAlienList()
+
 randomButton.addEventListener("click", () => {
     desactivateClasses()
+    randomButton.disabled = "true"
 
     const alienNamePromise = showAlien(alienList)
     alienNamePromise.then(alienName => {

@@ -27,8 +27,8 @@ html {
     position: relative;
     display: flex;
     align-items: center;
-    height: 800px;
-    width: 500px;
+    max-height: 800px;
+    max-width: 500px;
     margin: 2rem auto;
     flex-direction: column;
     border: solid 10px var(--secondary-color);
@@ -62,8 +62,8 @@ html {
     position: relative;
     display: flex;
     background-color: var(--clock-background-color);
-    height: 200px; 
-    width: 200px; 
+    max-height: 200px;
+    max-width: 200px;
     border-radius: 50%;
     justify-content: center;
     align-items: center;
@@ -104,7 +104,7 @@ html {
 }
 
 .clock-background.move {
-    transform: translate3d(150%, -80%, 0);
+    transform: translate3d(150%, -120%, 0);
     height: 100px;
     width: 100px;
     transition: 1.5s;
@@ -123,8 +123,7 @@ html {
 
 /* Animations */
 #clock-right.active,
-#clock-left.active,
-#alien.active {
+#clock-left.active {
     height: 90px; 
     width: 90px;
     background-color: #0000;
@@ -140,13 +139,13 @@ html {
 
 #alien {
     position: absolute;
+    max-height: 80px;
+    max-width: 60px;
     opacity: 0;
 }
 
 #alien.active {
     opacity: 1;
-    max-height: 80px;
-    max-width: 60px;
     transition: opacity 2s;
 }
 
@@ -156,6 +155,7 @@ button {
     cursor: pointer;
     padding: 1rem 2.5rem;
     border: none;
+    margin-bottom: 2rem;
     border-radius: 10px;
     font-size: 20px;
     background-color: var(--button-color);
@@ -177,6 +177,7 @@ button:hover {
 
 /* Informations */
 #info {
+    position: absolute;
     opacity: 0;
     height: 0%;
     width: 100%;
@@ -184,7 +185,6 @@ button:hover {
 
 #info.active {
     background-color: var(--secondary-color);
-    position: absolute;
     height: 63%;
     width: 100%;
     bottom: 0;
@@ -243,14 +243,18 @@ button:hover {
 }
 
 /* Responsive */
-@media only screen and (max-width: 414px) {
+@media (max-width: 450px) {
     .main {
         margin: 20% auto;
         height: 80vh;
         width: 90vw;
     }
 
+    .clock-background {
+        background-color: red;
+    }
+
     .clock-background.move {
-        transform: translate3d(300%, 250%, 0);
+        transform: translate3d(100%, -80%, 0);
     }
 }
